@@ -63,12 +63,6 @@ public abstract class AbstractFastRabbitMQBaseContainer implements FastRabbitMQB
         return container;
     }
 
-    @RabbitHandler
-    @Override
-    public void processMessage(String message){
-        process(message);
-    }
-
     @Override
     public void before(Message message) {
 
