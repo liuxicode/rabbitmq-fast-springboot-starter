@@ -27,7 +27,7 @@ import java.util.Map;
  */
 public abstract class AbstractFastRabbitMQBaseContainer implements FastRabbitMQBaseContainer {
 
-    private String queueName;
+    public String queueName;
 
     @Autowired
     private MongoTemplate fastRabbitMQMongoTemplate;
