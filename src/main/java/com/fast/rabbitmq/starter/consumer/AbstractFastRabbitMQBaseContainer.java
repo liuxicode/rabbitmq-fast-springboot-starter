@@ -47,13 +47,15 @@ public abstract class AbstractFastRabbitMQBaseContainer implements FastRabbitMQB
 
                         String messageBody = String.valueOf(message.getBody());
 
+                        String cumsumerQueue = messageProperties.getConsumerQueue();
+
                         before(message);
                         try {
                             process(messageBody);
 
-                            after(correlationId,1);
+                            after(cumsumerQueue, correlationId,1);
                         }catch (Exception e){
-                            after(correlationId,2);
+                            after(cumsumerQueue, correlationId,2);
                             throw e;
                         }
                     }

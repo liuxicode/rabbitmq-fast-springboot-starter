@@ -21,8 +21,6 @@ public interface FastRabbitMQBaseContainer {
 
     public void before(Message message);
 
-    public void after(String messageId, int result);
-
     public void processMessage(String message);
 
     public void process(String message);
